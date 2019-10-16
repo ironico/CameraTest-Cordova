@@ -1,0 +1,114 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Welcome To Colaboratory",
+      "provenance": [],
+      "collapsed_sections": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/ironico/CameraTest-Cordova/blob/master/Seleniumi.pynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NGAUkeUvslWk",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "!sudo apt update\n",
+        "!apt install chromium-chromedriver\n",
+        "!cp /usr/lib/chromium-browser/chromedriver /usr/bin\n",
+        "!pip install selenium"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "lLJb3epBsocg",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "from selenium import webdriver\n",
+        "options = webdriver.ChromeOptions()\n",
+        "options.add_argument('--headless')\n",
+        "options.add_argument('--no-sandbox')\n",
+        "options.add_argument('--disable-dev-shm-usage')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NWFZCgPotVoC",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "wd = webdriver.Chrome('chromedriver',options=options)\n"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rLMe1QruvQFA",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "page='https://www.linkedin.com/posts/veronicagentili_repetitaiuvant-activity-6590134217986883584-TuGS/'"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "gQbkGvpCteZ9",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        "wd.get(page)\n",
+        "#print(wd.page_source) # results"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "MzsHbH08vY0H",
+        "colab_type": "code",
+        "colab": {}
+      },
+      "source": [
+        " wd.find_element_by_class_name('social-details-social-counts__reactions-count')"
+      ],
+      "execution_count": 0,
+      "outputs": []
+    }
+  ]
+}
